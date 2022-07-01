@@ -1,5 +1,5 @@
 # myfirstredux-react-redux
-YouTube redux + react course from Ulbi TV to learn how to use and apply redux
+My first react + redux application to learn how to use and apply redux
 ## Used technologies/tools:
 - JavaScript
 - React + Redux
