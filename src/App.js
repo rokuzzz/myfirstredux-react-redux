@@ -6,6 +6,7 @@ import CardActions from "@mui/material/CardActions";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import { addCustomerAction, removeCustomerAction } from "./store/customerReducer";
+import { fetchCustomers } from "./asyncActions/customers";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <Card className="counter" sx={{ minWidth: 350 }}>
+      <Card className="counter" sx={{ minWidth: 350, minHeight: 200 }}>
         <CardContent>
           <Typography className="counter-value"> {cash}</Typography>
         </CardContent>
@@ -56,7 +57,7 @@ function App() {
           </Button>
         </CardActions>
       </Card>
-      <Card className="customer-base" sx={{ minWidth: 350 }}>
+      <Card className="customer-base" sx={{ minWidth: 350, minHeight: 200 }}>
         <CardContent>
           {customers.length > 0 ? (
             <List aria-label="client base">
@@ -85,6 +86,13 @@ function App() {
             onClick={() => addCustomer(prompt())}
           >
             Add customer
+          </Button>
+          <Button
+            variant="outlined"
+            size="large"
+            onClick={() => dispatch(fetchCustomers())}
+          >
+            Fetch customers
           </Button>
         </CardActions>
       </Card>
